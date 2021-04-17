@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Subscribe to Author{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <div class="error">
+        {{ form.errors }}
+    </div>
+    <div class="payload">
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.email_to }}
+            <br><br>
+            {{ form.author_id }}
+            <br>
+            <br>
+            <button class="btn btn-outline-warning">Subscribe</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
